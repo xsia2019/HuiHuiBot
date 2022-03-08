@@ -25,15 +25,14 @@ md_message = '### 北海天气  \n  ' \
              '##### {forcast}  \n  ' \
              '![picture]({image})  \n  ' \
              '##### {sentence}  \n  '\
-             '##### from GitHub Actions.  \n  '\
     .format(forcast=forcast, image=image, sentence=sentence)
 
 # 接收系统传入的webhook和secret
-pipinao_webhook = sys.argv[1]
-pipinao_secret = sys.argv[2]
+huihui_webhook = sys.argv[1]
+huihui_secret = sys.argv[2]
 
 # 实例化DingtalkChatbot
-pipinao = DingtalkChatbot(pipinao_webhook, secret=pipinao_secret)
+huihui = DingtalkChatbot(huihui_webhook, secret=huihui_secret)
 
 # 发送消息
-pipinao.send_markdown(title="今天天气", text=md_message, is_at_all=False)
+huihui.send_markdown(title="今天天气", text=md_message, is_at_all=False)
