@@ -1,8 +1,10 @@
-name: DingTalkBot
+name: HuihuiWeatherBot
 
 on:
   schedule:
     - cron: "00 00 * * 1-5"
+    - cron: "00 04 * * 1-5"
+    - cron: "00 10 * * 1-5"
 
   watch:
     types: [started]
@@ -24,4 +26,4 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Run misson
       run: |
-        python DingTalkBot.py ${{ secrets.huihui_webhook }} ${{ secrets.huihui_secret }} ${{ secrets.qweather_key }}
+        python weatherbot.py ${{ secrets.huihui_webhook }} ${{ secrets.huihui_secret }} ${{ secrets.qweather_key }}
